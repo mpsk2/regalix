@@ -20,7 +20,7 @@ class TasksList extends Component {
     }
 
     render() {
-        const { tasks, isFetching, lastUpdate, onToggleClick, onSubmitClick } = this.props;
+        const { tasks, onToggleClick, onSubmitClick } = this.props;
         let tasks_rows;
         if (!tasks) {
             tasks_rows = (

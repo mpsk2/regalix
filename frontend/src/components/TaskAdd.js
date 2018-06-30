@@ -7,7 +7,6 @@ class TaskAdd extends Component {
         super(props, context);
     }
 
-
     render() {
         let name;
         let completed;
