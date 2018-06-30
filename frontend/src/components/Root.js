@@ -5,7 +5,7 @@ import configureStore from "../store/configureStore";
 import About from "./About";
 import Contact from "./Contact";
 import App from "./App";
-import TaskEdit from "./TaskEdit";
+import TaskEdit from "../containers/TaskEdit";
 import TasksList from "../containers/TasksList";
 
 const store = configureStore();
