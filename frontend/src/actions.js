@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch';
+import axios from 'axios';
 
 const URL_PREFIX = 'http://localhost:8000/api/tasks/';
 
@@ -29,22 +30,11 @@ function taskSubmit() {
 
 export function taskSave(task) {
     return dispatch => {
-        return fetch(URL_PREFIX, {
-            method: 'POST',
-            body: JSON.stringify(task),
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-        })
+        return axios.post(URL_PREFIX, task)
             .then(response => {
-                console.log(response.status);
-                if (response.status != 201) {
-                    throw new Error(response.json());
-                }
-                return response.json()
+                return response.data
             })
-            .then(json => dispatch(taskAdd(json)));
+            .then(data => dispatch(taskAdd(data)));
     }
 }
 
@@ -57,17 +47,9 @@ function taskCompletedToggle(task) {
 
 export function taskCompletedUpdate(task) {
     return dispatch => {
-        return fetch(URL_PREFIX + task.id, {
-            method: 'PATCH',
-            body: JSON.stringify(task),
-
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-        })
-            .then(response => response.json())
-            .then(json => dispatch(taskCompletedToggle(json)));
+        return axios.patch(URL_PREFIX + task.id, task)
+            .then(response => response.data)
+            .then(data => dispatch(taskCompletedToggle(data)));
     }
 }
 
@@ -96,8 +78,8 @@ function tasksReceive(json) {
 function fetchTasks() {
     return dispatch => {
         dispatch(tasksRequest);
-        return fetch(URL_PREFIX)
-            .then(response => response.json())
+        return axios.get(URL_PREFIX)
+            .then(response => response.data)
             .then(json => dispatch(tasksReceive(json)));
     }
 }
