@@ -21,12 +21,6 @@ function taskAdd(task) {
     };
 }
 
-function taskSubmit() {
-    return {
-        type: Task.SUBMIT,
-    }
-}
-
 export function taskSave(task) {
     return dispatch => {
         return axios.post(URL_PREFIX, task)

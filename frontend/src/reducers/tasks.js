@@ -1,12 +1,12 @@
 import { Task, Tasks } from "../actions/tasks";
 
-const initialStates = {
+const initialState = {
     tasks: [],
     isFetching: false,
     didInvalidate: false,
 };
 
-function tasks(state = initialStates, action) {
+export default (state = initialState, action) => {
     switch (action.type) {
         case Tasks.INVALIDATE:
             return Object.assign({}, state, {didInvalidate: true});
@@ -39,6 +39,4 @@ function tasks(state = initialStates, action) {
         default:
             return state;
     }
-}
-
-export default tasks;
+};
