@@ -20,7 +20,7 @@ class Task extends Component {
         const {completed} = props;
         return {
             completedText: completed ? "YES" : "NO",
-            completedBtnText: completed ? "Mark Pending" : "Mark Completed",
+            completedBtnText: completed ? "Mark Pending" : "Mark Done",
             completed,
         }
     }

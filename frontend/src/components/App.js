@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
-import VisibleTasksList from '../containers/VisibleTasksList'
 import {Container} from 'reactstrap';
 
-const App = () => {
-    return (
-        <Container>
-            <VisibleTasksList />
-        </Container>
-    );
-};
+class App extends Component {
+    render() {
+        return (
+            <Container>
+                {this.props.children}
+            </Container>
+        );
+    }
+}
 
-export default App
+export default App;
 

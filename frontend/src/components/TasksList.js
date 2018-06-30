@@ -44,10 +44,10 @@ class TasksList extends Component {
                 <Table bordered striped>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>name</th>
-                            <th>completed</th>
-                            <th>actions</th>
+                            <th>SI</th>
+                            <th>Name</th>
+                            <th>Completed?</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
