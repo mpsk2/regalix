@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const URL_PREFIX = 'http://localhost:8000/api/tasks/';
+import {URL_PREFIX} from "./common";
 
 export const Task = {
     ADD: 'TASK_ADD',

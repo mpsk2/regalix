@@ -1,6 +1,5 @@
 import axios from "axios/index";
-
-const URL_PREFIX = 'http://localhost:8000/api/tasks/';
+import {URL_PREFIX} from "./common";
 
 export const TaskEdit = {
     FAILURE: 'TASK_EDIT_FAILURE_FETCH',
