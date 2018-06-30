@@ -2,6 +2,8 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import configureStore from "../store/configureStore";
+import About from "./About";
+import Contact from "./Contact";
 import App from "./App";
 import TaskEdit from "./TaskEdit";
 import VisibleTasksList from "../containers/VisibleTasksList";
@@ -15,6 +17,8 @@ const Root = () => (
                 <Switch>
                     <Route path='/' component={VisibleTasksList}/>
                     <Route path='/:id/edit' component={TaskEdit}/>
+                    <Route path='/about' component={About}/>
+                    <Route path='/contact' component={Contact}/>
                 </Switch>
             </Router>
         </Provider>
