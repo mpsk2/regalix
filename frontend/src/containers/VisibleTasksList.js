@@ -3,8 +3,8 @@ import {fetchTasksIfNeeded, taskCompletedSet, taskCompletedUpdate, tasksInvalida
 import TasksList from '../components/TasksList';
 
 const mapStateToProps = state => ({
-        isFetching: state.isFetching,
-        tasks: state.tasks
+        isFetching: state.tasks.isFetching,
+        tasks: state.tasks.tasks
 });
 
 const mapDispatchToProps = dispatch => ({

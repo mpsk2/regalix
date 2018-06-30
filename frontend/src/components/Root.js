@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import configureStore from "../store/configureStore";
 import App from "./App";
 
-const store = configureStore({tasks: [{id: 0, name: 'jazda', completed: false}]});
+const store = configureStore();
 
 const Root = () => (
     <Provider store={store}>

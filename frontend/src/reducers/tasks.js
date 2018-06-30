@@ -1,4 +1,4 @@
-import { Task, Tasks } from "./actions/tasks";
+import { Task, Tasks } from "../actions/tasks";
 
 const initialStates = {
     tasks: [],

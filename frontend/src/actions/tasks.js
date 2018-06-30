@@ -1,4 +1,3 @@
-import fetch from 'cross-fetch';
 import axios from 'axios';
 
 const URL_PREFIX = 'http://localhost:8000/api/tasks/';
@@ -85,6 +84,7 @@ function fetchTasks() {
 }
 
 function shouldFetchTasks(state) {
+    console.log(state);
     const tasks = state.tasks;
     if (!tasks) {
         return true;
@@ -97,7 +97,7 @@ function shouldFetchTasks(state) {
 
 export function fetchTasksIfNeeded() {
     return (dispatch, getState) => {
-        if (shouldFetchTasks(getState())) {
+        if (shouldFetchTasks(getState().tasks)) {
             return dispatch(fetchTasks())
         }
     }
