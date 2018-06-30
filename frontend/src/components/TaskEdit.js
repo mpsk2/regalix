@@ -5,7 +5,7 @@ class TaskEdit extends Component {
         document.title = "Task Edit | Regalix";
     }
     render() {
-        return (<h1>Task edit</h1>);
+        return (<h1>Task edit {this.props.match.params.id}</h1>);
     }
 }
 

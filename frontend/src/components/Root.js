@@ -6,7 +6,7 @@ import About from "./About";
 import Contact from "./Contact";
 import App from "./App";
 import TaskEdit from "./TaskEdit";
-import VisibleTasksList from "../containers/VisibleTasksList";
+import TasksList from "../containers/TasksList";
 
 const store = configureStore();
 
@@ -15,7 +15,7 @@ const Root = () => (
         <Provider store={store}>
             <Router>
                 <div>
-                    <Route exact path='/' component={VisibleTasksList}/>
+                    <Route exact path='/' component={TasksList}/>
                     <Route path='/:id/edit' component={TaskEdit}/>
                     <Route path='/about' component={About}/>
                     <Route path='/contact' component={Contact}/>
