@@ -1,5 +1,6 @@
 const publicPath = '/dist/build/';
 const path = require('path');
+const CompressionPlugin = require("compression-webpack-plugin");
 const webpack = require('webpack');
 
 module.exports = {
@@ -25,8 +26,10 @@ module.exports = {
             compress: {
                 screw_ie8: true
             },
-            comments: false
-        })
+            comments: false,
+        }),
+        new CompressionPlugin(),
     ],
     mode: 'production',
+    devtool: 'source-map',
 };
