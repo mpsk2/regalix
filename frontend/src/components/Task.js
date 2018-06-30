@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Button} from 'reactstrap';
+import style from './Task.css';
 
 class Task extends Component {
     constructor(props) {
@@ -29,12 +30,12 @@ class Task extends Component {
         const {completedText, completedBtnText} = this.state;
         return (
             <tr>
-                <td>{id}</td>
+                <td className={style.shrink}>{id}</td>
                 <td>{name}</td>
-                <td>{completedText}</td>
-                <td>
-                    <Button color="edit">Edit</Button>
-                    <Button color="edit" onClick={onToggleClick}>
+                <td className={style.shrink}>{completedText}</td>
+                <td className={style.shrink}>
+                    <Button>Edit</Button>
+                    <Button onClick={onToggleClick}>
                         {completedBtnText}
                     </Button>
                 </td>

@@ -15,7 +15,7 @@ module.exports = {
             template: 'index.html'
         }),
         //Auto replacement of page when i save some file, even css
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
     ],
 
     output: {
@@ -38,15 +38,24 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/, use: ['style-loader', 'css-loader'],
-                include: /flexboxgrid/
-                //Follow instructions at https://github.com/roylee0704/react-flexbox-grid
-            },
-            {
+                test: /\.css$/,
+                use: [{
+                    loader: 'style-loader'
+                }, {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        importLoaders: 1,
+                        localIdentName: "[name]_[local]_[hash:base64]",
+                        sourceMap: true,
+                        minimize: true
+                    }
+                }],
+                exclude: /node_modules/,
+            }, {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: ['file-loader']
-            },
-            {
+            }, {
                 test: /\.js|.jsx?$/,
                 exclude: /(node_modules)/,
                 loaders: ["babel-loader"]
