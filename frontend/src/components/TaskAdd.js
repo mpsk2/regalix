@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import {Form, Label, Button, Input, FormGroup} from 'reactstrap';
 
 class TaskAdd extends Component {
-    constructor(props, context) {
-        super(props, context);
-    }
-
     render() {
         let name;
         let completed;
