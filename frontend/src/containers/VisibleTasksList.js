@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {fetchTasksIfNeeded, taskCompletedSet, taskCompletedUpdate, tasksInvalidate, taskSave} from '../actions';
+import {fetchTasksIfNeeded, taskCompletedSet, taskCompletedUpdate, tasksInvalidate, taskSave} from '../actions/tasks';
 import TasksList from '../components/TasksList';
 
 const mapStateToProps = state => ({
