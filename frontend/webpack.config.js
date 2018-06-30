@@ -11,7 +11,6 @@ module.exports = {
     devtool: 'cheap-module-source-map',
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Hot Module Replacement',
             template: 'index.html'
         }),
         //Auto replacement of page when i save some file, even css

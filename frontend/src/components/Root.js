@@ -14,12 +14,12 @@ const Root = () => (
     <App>
         <Provider store={store}>
             <Router>
-                <Switch>
-                    <Route path='/' component={VisibleTasksList}/>
+                <div>
+                    <Route exact path='/' component={VisibleTasksList}/>
                     <Route path='/:id/edit' component={TaskEdit}/>
                     <Route path='/about' component={About}/>
                     <Route path='/contact' component={Contact}/>
-                </Switch>
+                </div>
             </Router>
         </Provider>
     </App>

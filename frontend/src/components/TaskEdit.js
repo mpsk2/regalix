@@ -1,7 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const TaskEdit = () => (
-   <h1>Hello world!</h1>
-);
+class TaskEdit extends Component {
+    componentDidMount() {
+        document.title = "Task Edit | Regalix";
+    }
+    render() {
+        return (<h1>Task edit</h1>);
+    }
+}
 
 export default TaskEdit;

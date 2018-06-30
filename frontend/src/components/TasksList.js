@@ -13,6 +13,7 @@ class TasksList extends Component {
 
     componentDidMount() {
         this.props.setUp();
+        document.title = "Tasks List | Regalix";
     }
 
     handleChange() {
