@@ -3,6 +3,7 @@ import axios from "axios/index";
 const URL_PREFIX = 'http://localhost:8000/api/tasks/';
 
 export const TaskEdit = {
+    FAILURE: 'TASK_EDIT_FAILURE_FETCH',
     INVALIDATE: 'TASK_EDIT_INVALIDATE',
     REQUEST: 'TASK_EDIT_REQUEST',
     RECEIVE: 'TASK_EDIT_RECEIVE',
@@ -31,12 +32,20 @@ function taskReceive(task) {
     }
 }
 
+function taskReceiveFailure(err) {
+    return {
+        type: TaskEdit.FAILURE,
+        err
+    };
+}
+
 function fetchTask(id) {
     return dispatch => {
         dispatch(taskRequest);
         return axios.get(URL_PREFIX + id)
             .then(response => response.data)
-            .then(task => dispatch(taskReceive(task)));
+            .then(task => dispatch(taskReceive(task)))
+            .catch(ex => dispatch(taskReceiveFailure(ex)));
     }
 }
 

@@ -18,15 +18,22 @@ class TaskEdit extends Component {
     }
 
     render() {
-
-        return (
-            <div>
-                <h1>Task edit {this.props.match.params.id}</h1>
-                <p>{this.props.task.id}</p>
-                <p>{this.props.task.name}</p>
-                <p>{this.props.task.completed}</p>
-            </div>
-        );
+        if (this.props.err) {
+            return (
+                <div>
+                    <h1>Failed to fetch task.</h1>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <h1>Task edit {this.props.match.params.id}</h1>
+                    <p>{this.props.task.id}</p>
+                    <p>{this.props.task.name}</p>
+                    <p>{this.props.task.completed}</p>
+                </div>
+            );
+        }
     }
 }
 
@@ -40,6 +47,7 @@ TaskEdit.propTypes = {
     lastUpdated: PropTypes.number,
     setUp: PropTypes.func.isRequired,
     refresh: PropTypes.func.isRequired,
+    err: PropTypes.bool.isRequired,
 };
 
 export default TaskEdit;
