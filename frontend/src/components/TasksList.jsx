@@ -25,9 +25,9 @@ class TasksList extends Component {
     const {
       tasks, onToggleClick, onSubmitClick, onEditSaveClick,
     } = this.props;
-    let tasks_rows;
+    let tasksRows;
     if (!tasks) {
-      tasks_rows = (
+      tasksRows = (
           <tr>
             <td>
               No records!
