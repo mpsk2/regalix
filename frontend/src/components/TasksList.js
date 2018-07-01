@@ -21,7 +21,7 @@ class TasksList extends Component {
     }
 
     render() {
-        const { tasks, onToggleClick, onSubmitClick } = this.props;
+        const {tasks, onToggleClick, onSubmitClick, onEditSaveClick} = this.props;
         let tasks_rows;
         if (!tasks) {
             tasks_rows = (
@@ -36,6 +36,7 @@ class TasksList extends Component {
                 name={task.name}
                 completed={task.completed}
                 onToggleClick={() => onToggleClick(task)}
+                onEditSaveClick={onEditSaveClick}
             />);
         }
 
@@ -74,6 +75,7 @@ TasksList.propTypes = {
     setUp: PropTypes.func.isRequired,
     refresh: PropTypes.func.isRequired,
     onSubmitClick: PropTypes.func.isRequired,
+    onEditSaveClick: PropTypes.func.isRequired,
 };
 
 export default TasksList;

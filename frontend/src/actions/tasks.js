@@ -23,11 +23,16 @@ function taskAdd(task) {
 export function taskSave(task) {
     return dispatch => {
         return axios.post(URL_PREFIX, task)
-            .then(response => {
-                return response.data
-            })
+            .then(response => response.data)
             .then(data => dispatch(taskAdd(data)));
     }
+}
+export function taskUpdate(task) {
+    return dispatch => {
+        return axios.put(URL_PREFIX + task.id, task)
+            .then(response => response.data)
+            .then(data => dispatch(taskCompletedToggle(task)));
+    };
 }
 
 function taskCompletedToggle(task) {
