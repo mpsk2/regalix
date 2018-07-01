@@ -1,7 +1,13 @@
 import React from 'react';
+import './Footer.css';
 
 export default () => (
-    <footer>
-        <h1>Regalix app footer</h1>
-    </footer>
+    <div id="footer">
+        <footer>
+            <hr/>
+            <div>
+                <p>Page created for Regalix recrutation</p>
+            </div>
+        </footer>
+    </div>
 );
