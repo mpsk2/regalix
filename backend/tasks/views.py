@@ -8,6 +8,6 @@ class TasksListCreate(generics.ListCreateAPIView):
     queryset = Task.objects.all()
 
 
-class TaskUpdate(generics.RetrieveUpdateAPIView):
+class TaskUpdate(generics.UpdateAPIView):
     serializer_class = TaskSerializer
     queryset = Task.objects.all()

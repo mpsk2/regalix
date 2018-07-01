@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {Button} from 'reactstrap';
 import style from './Task.css';
@@ -35,9 +34,7 @@ class Task extends Component {
                 <td>{name}</td>
                 <td className={style.shrink}>{completedText}</td>
                 <td className={style.shrink}>
-                    <Link to={"/" + id + "/edit"}>
-                        <Button>Edit</Button>
-                    </Link>
+                    <Button>Edit</Button>
                     <Button onClick={onToggleClick}>
                         {completedBtnText}
                     </Button>
