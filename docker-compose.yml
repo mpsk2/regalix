@@ -1,6 +1,8 @@
 version: '3'
 
 services:
+  redis:
+    image: redis:2.8
   db:
     image: postgres
   backend:
@@ -12,6 +14,7 @@ services:
       - "8000:8000"
     depends_on:
       - db
+      - redis
   frontend:
     build: ./frontend
     command: npm start
@@ -20,5 +23,4 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - db
       - backend
